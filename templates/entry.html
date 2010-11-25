@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>{{ entry.title }}</title>
+{% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+
+function dhtmlLoadScript(url)
+{
+   var e = document.createElement("script");
+   e.src = url;
+   e.type="text/javascript";
+   document.getElementsByTagName("head")[0].appendChild(e);
+}
+
+//onload = function()
+//{
+//   dhtmlLoadScript("http://disqus.com/forums/turingroom/embed.js");
+//}
+
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="full">
+<div class="entry">
+<h1><a href="{{entry.url()}}">{{ entry.title }}</a></h1>
+<div class="date">{{ entry.published|datetimeformat('%B %d, %Y') }}</div>
+{% if is_admin %}<div class="admindiv"><a href="{{entry.url()}}/edit">edit</a> | <a href="{{entry.url()}}/del">delete</a> | <a href="{{entry.url()}}/publish">{% if not entry.draft %}un{% endif %}publish</a></div>{% endif %} 
+<div class="body">{{ entry.body_html }}</div>
+</div>
+<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=1b15b131-cbc0-4329-b51f-b39fbc980d44&amp;type=website"></script>
+
+<br/><br/>
+<hr/>
+<div id="disqus_thread"></div>
+<script type="text/javascript" src="http://disqus.com/forums/turingroom/embed.js"></script><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+{% endblock %}

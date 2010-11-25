@@ -1,0 +1,28 @@
+{% extends "tr_base.html" %}
+
+{% block title %}
+<title>"{{ entry.title }}" siliniyor</title>
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+	<div class="info">
+	<h2>Yazıyı Sil</h2>
+	<p>{{entry.title}}</p>
+	</div>
+
+	<ul>
+	<li id="fo5li0" class="   " >
+
+	<label class="desc" id="title0" for="Field0">
+	Bu yazıyı silmek istediğinizden emin misiniz? (Y/N)
+	<span id="req_0" class="req">*</span>
+	</label>
+
+	<div>
+	<input id="del" class="field text" name="del" tabindex="1" type="text" maxlength="1" value="N" /> 
+	</div>
+	<li class="buttons">
+	<input id="saveForm" class="btTxt" type="submit" tabindex="5" value="Gönder"  />
+</form>
+{% endblock %}

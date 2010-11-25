@@ -1,0 +1,22 @@
+application: turingroom
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+- url: /google64cbe0b740df58ed.html
+  static_files: static/google64cbe0b740df58ed.html
+  upload: static/google64cbe0b740df58ed.html
+- url: /favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+- url: /.*
+  script: main.py
+- url: /new
+  script: main.py
+  login: admin

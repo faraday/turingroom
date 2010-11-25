@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+	<title>Turing Room</title>
+	<link href="http://www.turingroom.com/{{lang}}/feed" rel="self" type="application/atom+xml" />
+	<link rel="alternate" href="http://www.turingroom.com/" title="Turing Room" type="text/html" /> 
+	<id>http://www.turingroom.com/</id>
+	<updated>{{now.isoformat().split('.')[0]}}Z</updated>
+	<author>
+		<name>Çağatay Çallı</name>
+		<email>cagatay@turingroom.com</email>
+	</author>
+ 
+ 	{% for entry in entries %}
+	<entry>
+		<title>{{ entry.title }}</title>
+		<link href="http://www.turingroom.com{{ entry.url() }}" rel="alternate" type="text/html" />
+		<id>http://www.turingroom.com{{ entry.url() }}</id>
+		<updated>{{ entry.updated.isoformat().split('.')[0] }}Z</updated>
+		<published>{{ entry.published.isoformat().split('.')[0] }}Z</published>
+		<content type="xhtml" xml:base="http://bret.appspot.com/">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+		{{ entry.excerpt }}
+		</div>
+		</content>
+	</entry>
+	{% endfor %}
+ 
+</feed>

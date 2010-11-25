@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+{% block title %}{% endblock %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="/static/css/base.css"/>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+
+<div id="header">
+<div class="body">
+
+<div class="logo"> 
+<div class="icon"><a href="http://www.turingroom.com/"><img src="/static/images/logo.png" alt="Turing Room logo"/></a></div> 
+<div class="title"><a href="/"><img src="/static/images/title.png" alt="Turing Room title"/></a></div> 
+<div style="clear:both"></div>
+</div>
+
+<div class="menu"> 
+<div class="feed item"><a href="http://feeds.feedburner.com/turingroom_tr">Üye Ol</a></div>
+<div class="altlang item"><a href="/en">en</a></div> 
+<div {% if selectedPage == 'home' %} class="item selected" {% else %} class="item" {% endif %}><a href="/tr">Ana Sayfa</a></div> 
+<div {% if selectedPage == 'index' %} class="item selected" {% else %} class="item" {% endif %}><a href="/tr/index">Arşiv</a></div> 
+<div {% if selectedPage == 'about' %} class="item selected" {% else %} class="item" {% endif %}><a href="/tr/about">Hakkında</a></div> 
+<div style="clear:both"></div>
+</div>
+
+</div>
+</div>
+
+{% block maindiv %} <div id="main"> {% endblock %}
+<div class="body">
+	{% block content %}
+	{% endblock %}
+
+<div id="footer"><hr>&copy;2010 Çağatay Çallı - <a href="/tr/about">Hakkımda</a> - <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Lisansı</a></div>
+<div id="attribution" style="font-size: x-small;"><a href="http://bret.appspot.com">Bret Taylor</a>'ın blog tasarımı, izniyle kullanılmaktadır.</div>
+<div id="logo-license" style="font-size: x-small;">"Turing Room" logolarının her hakkı saklıdır.</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12858626-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

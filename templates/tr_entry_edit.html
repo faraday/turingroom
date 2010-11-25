@@ -1,0 +1,33 @@
+{% extends 'tr_base.html' %}
+
+{% block title %}
+<title>"{{ entry.title }}" değiştiriliyor</title>
+{% endblock %}
+
+{% block maindiv %} <div id="indexmain"> {% endblock %}
+
+{% block content %}
+
+<div class="info">
+{% if not entry %}
+<h2>Yeni Yazı</h2>
+<p>yeni bir yazı oluştur.</p>
+{% else %}
+<h2><em>"{{entry.title}}"</em> değiştiriliyor</h2>
+{% endif %}
+</div>
+
+<br/>
+
+<div class="form">
+<form action="" method="POST" enctype="multipart/form-data">
+<input id="language" name="language" type="hidden" size="2" value="tr"/>
+<table>
+	<tr><td><label for="title"><strong>Başlık:</strong></label></td><td><textarea id="title" name="title" rows="1" cols="80">{{entry.title}}</textarea></td></tr>
+	<tr><td><label for="markdown"><strong>İçerik:</strong></label></td><td colspan=2><textarea id="markdown" name="markdown" rows="20" cols="80">{{entry.markdown}}</textarea></td></tr>
+	<tr><td colspan="2" style="text-align: right;"><input type="submit" value="Gönder" /></td></tr>
+</table>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Archive of Turing Room</title>
+{% endblock %}
+
+{% block maindiv %} <div id="indexmain"> {% endblock %}
+
+{% block content %}
+
+<div class="summary">
+{% for entry in entries %}
+<div class="entry">
+<h1><a href="{{entry.url()}}">{{ entry.title }}</a></h1>
+<div class="date">{{ entry.published|datetimeformat('%B %d, %Y') }}</div> 
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

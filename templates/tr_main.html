@@ -1,0 +1,50 @@
+{% extends 'tr_base.html' %}
+
+{% block title %}
+<title>Turing Room</title>
+{% endblock %}
+
+{% block head %}
+<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#tabs=web%2Cpost%2Cemail&amp;charset=utf-8&amp;services=facebook%2Cdelicious%2Cfriendfeed%2Cstumbleupon&amp;publisher=1b15b131-cbc0-4329-b51f-b39fbc980d44&amp;headerbg=%23e0e0e0&amp;inactivebg=%23bdbdbd&amp;inactivefg=%23575555&amp;linkfg=%230099dd&amp;type=website"></script>
+{% endblock %}
+
+{% block content %}
+
+{% for entry in entries %}
+<div class="full">
+<div class="entry">
+<h1><a href="{{entry.url()}}">{{entry.title}}</a></h1> 
+<div class="date">{{ entry.published|datetimeformat('%d.%m.%Y') }}</div>
+{% if is_admin %}<div class="admindiv"><a href="{{entry.url()}}/edit">değiştir</a> | <a href="{{entry.url()}}/del">sil</a> | <a href="{{entry.url()}}/publish">yayınla{% if not entry.draft %}ma{% endif %}</a></div>{% endif %} 
+<div class="body">
+{{ entry.body_html }}
+</div>
+
+<div class="footer"><a href="{{entry.url()}}#disqus_thread">Yorum</a>
+&nbsp;&nbsp;
+<script type="text/javascript">SHARETHIS.addEntry({ title: "{{entry.title}}", url: "http://turingroom.com/{{entry.url()}}" });</script>
+</div>
+
+</div>
+</div>
+
+{% endfor %}
+
+<div><a href="/tr/index">Tüm Yazılar &raquo;</a></div>
+
+<script type="text/javascript"> 
+//<![CDATA[
+(function() {
+var links = document.getElementsByTagName('a');
+var query = '?';
+for (var i = 0; i < links.length; i++) {
+if (links[i].href.indexOf('#disqus_thread') >= 0) {
+query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+}
+}
+document.write('<script type="text/javascript" src="http://disqus.com/forums/turingroomtr/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script> 
+
+{% endblock %}

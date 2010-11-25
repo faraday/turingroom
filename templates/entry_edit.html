@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Editing "{{ entry.title }}"</title>
+{% endblock %}
+
+{% block maindiv %} <div id="indexmain"> {% endblock %}
+
+{% block content %}
+
+<div class="info">
+{% if not entry %}
+<h2>New Entry</h2>
+<p>create a new blog entry.</p>
+{% else %}
+<h2>Editing <em>"{{entry.title}}"</em></h2>
+{% endif %}
+</div>
+
+<br/>
+
+<div class="form">
+<form action="" method="POST" enctype="multipart/form-data">
+<input id="language" name="language" type="hidden" size="2" value="en"/>
+<table>
+	<tr><td><label for="title"><strong>Title:</strong></label></td><td><textarea id="title" name="title" rows="1" cols="80">{{entry.title}}</textarea></td></tr>
+	<tr><td><label for="markdown"><strong>Content:</strong></label></td><td colspan=2><textarea id="markdown" name="markdown" rows="20" cols="80">{{entry.markdown}}</textarea></td></tr>
+	<tr><td colspan="2" style="text-align: right;"><input type="submit" value="Submit" /></td></tr>
+</table>
+</form>
+</div>
+
+{% endblock %}

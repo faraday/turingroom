@@ -1,0 +1,255 @@
+body {
+  background-color: #dddddd;
+  margin: 0px;
+}
+
+/* Font specs */
+body,
+input,
+textarea,
+td,
+select,
+option {
+  color: #222;
+  font-family: Calibri, Georgia, serif;
+  font-size: 1em;
+  text-align: justify;
+}
+
+img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+}
+
+td {
+  padding: 0;
+  border: 0;
+}
+
+form {
+  margin: 0;
+}
+
+div,
+table {
+  position: relative;
+}
+
+a,
+a:visited {
+  color: #0000cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+  margin: 5px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+#header {
+  background-color: #31353d;
+}
+
+#header .menu {
+  background-color: #383d44;
+  border-top: 1px solid #434b57;
+}
+
+#header .menu .item {
+  float: left;
+  padding: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 8pt;
+  text-transform: uppercase;
+  border-right: 1px solid #2d3239;
+}
+
+#header .menu .item.selected {
+  background-color: #262a30;
+}
+
+#header .menu .item.feed {
+  float: right;
+  border-right: 0;
+}
+
+#header .menu .item.feed a {
+  padding-left: 20px;
+  background: url("/static/images/feed-small.png") no-repeat left center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#header .menu .item.feed a.email {
+  background: url("/static/images/email.png?v=1") no-repeat left center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#header .menu .item.altlang {
+  float: right;
+  border-right: 0;
+}
+
+#header .menu .item.altlang a {
+  padding-left: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#header .menu .item a,
+#header .menu .item a:visited {
+  color: white;
+}
+
+#header .logo {
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+
+#header .logo .icon {
+  float: left;
+}
+
+#header .logo .icon img {
+  width: 45px;
+  height: 45px;
+}
+
+#header .logo .title {
+  margin-left: 60px;
+  margin-top: 8px;
+  padding-top: 3px;
+}
+
+#header .logo .title img {
+  width: 135px;
+  height: 26px;
+}
+
+#main {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#indexmain {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 54em;
+}
+
+#footer {
+  margin-top: 5em;
+}
+
+.body {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.full .entry {
+  margin-bottom: 3em;
+
+  border: gray 1px solid;
+  padding: 10px;
+}
+
+.full .entry h1 {
+  font-size: 20pt;
+}
+
+.full .entry h1 a,
+.full .entry h1 a:visited {
+  text-decoration: none;
+  color: #222;
+}
+
+.full .entry .date {
+  margin-top: 0.25em;
+}
+
+.full .entry .body {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1em;
+  line-height: 1.3em;
+}
+
+.full .entry .body p {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.full .entry .body h2 {
+  font-size: 14pt;
+  margin-bottom: 0.25em;
+}
+
+.full .entry .footer .share {
+  color: #25833e;
+  padding-left: 21px;
+  background: url("/static/images/share.png");
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#archive {
+  margin-top: 3em;
+}
+
+.summary .entry {
+  margin-bottom: 1em;
+}
+
+.summary .entry h1 {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+pre, code {
+  color: #007000;
+  font-family: "bogus font here", monospace;
+  font-size: 100%;
+}
+
+pre {
+  border: 1px solid silver;
+  background-color: #f5f5f5;
+  padding: 0.5em;
+  overflow: auto;
+  margin: 2em;
+}
+
+ul {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+ul li {
+  margin-bottom: 0.3em;
+}
